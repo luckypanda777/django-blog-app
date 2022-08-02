@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Hello World {% endblock %}
+
+{% load crispy_forms_tags %} 
+
+{% block content %}
+{% include 'main/utils/navbar.html' %}
+<div class='container'>
+    <form method="POST">
+        {% csrf_token %}
+        {% crispy form %}
+    </form>
+</div>
+{% endblock %}
